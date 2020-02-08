@@ -48,12 +48,6 @@ class DecisionTree():
         self.final_tree = None
         self.repr_tree = []
 
-    def __call__(self):
-        root = self._build_tree(df=self.df)
-        self.create_view(root, 0)
-
-        repr_tree = sorted(self.repr_tree, key=lambda k:k['Level'])
-        pprint(repr_tree)
 
     def _build_tree(self, df):
         # Get the number of positive and negative examples in the training data
@@ -61,12 +55,13 @@ class DecisionTree():
         # Train data has one kind of value remaining
         if p == 0 or n == 0:
             # Create a leaf node indicating it's prediction
-            leaf = Node(None,None, leaf_nums=(p+n))
+            leaf = Node(None,None)
             leaf.leaf = True
             if p >= n:
                 leaf.predict = 1
             else:
                 leaf.predict = 0
+            leaf.leaf_nums = p+n
             return leaf
         else:
             # Otherwise, find the attribute for deciding with threshold
@@ -183,11 +178,11 @@ class DecisionTree():
         if proba[0] == 0 or proba[1] == 0:
             I = 0
         else:
-            I = -1 * np.dot(proba, np.log(proba))
+            I = -1 * np.dot(proba, np.log2(proba))
         
         return I
 
-    def create_view(self, root, level):
+    def _create_view(self, root, level):
         if root.leaf:
             elem = {
                 "Label": root.predict,
@@ -206,12 +201,41 @@ class DecisionTree():
             }
             self.repr_tree.append(elem)
         if root.left:
-            self.create_view(root.left, level+1)
+            self._create_view(root.left, level+1)
         if root.right:
-            self.create_view(root.right, level+1)
+            self._create_view(root.right, level+1)
 
 
+    def _represent_tree(self, tree):
+        max_level = tree[-1]['Level']
+        level = 0
+        i = 0
+        print("\n","*"*30,"\n")
+        print("Level ", level,"\n")
+        while level <= max_level and i < len(tree):
+            if tree[i]['Level'] > level:
+                print("\n","*"*30,"\n")
+                level += 1
+                print("Level ", level, "\n")
+
+                pprint(tree[i])
+
+            else:
+                pprint(tree[i])
         
+            i += 1
+
+
+    def __call__(self):
+        root = self._build_tree(df=self.df)
+        self._create_view(root, 0)
+
+        repr_tree = sorted(self.repr_tree, key=lambda k:k['Level'])
+        self._represent_tree(repr_tree)
+        
+
+
+            
 
 
 
