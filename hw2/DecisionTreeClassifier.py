@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import math
 from pprint import pprint
-import sys
+from collections import OrderedDict
 
 
 def load_data(filename='D1.txt'):
@@ -14,7 +14,7 @@ def load_data(filename='D1.txt'):
 
 
 class Node():
-    def __init__(self, attribute, threshold, left_nums=0, right_nums=0, leaf_nums=0):
+    def __init__(self, attribute, threshold, left_nums=0, right_nums=0, leaf_nums=0, ig=0):
         # Which column does it belong to
         self.attr = attribute
         # What is the threshold value that led to its split
@@ -32,6 +32,7 @@ class Node():
         self.leaf = False
         # Label assigned to a node if leaf
         self.predict = None
+        self.ig = ig
 
 
 class DecisionTree():
@@ -42,10 +43,13 @@ class DecisionTree():
         cols,
         predict_attr='Outcome',
     ):
-        self.df = load_data(data)
+        self.df = data
+        self.test_df = None
         self.attributes = cols
         self.predict_attr = predict_attr
+        # Abstract object built
         self.final_tree = None
+        # Object printed
         self.repr_tree = []
 
 
@@ -65,9 +69,9 @@ class DecisionTree():
             return leaf
         else:
             # Otherwise, find the attribute for deciding with threshold
-            best_attr, threshold = self._choose_attr(df)
+            best_attr, threshold, ig = self._choose_attr(df)
             # Create internal tree node based on attribute and it's threshold
-            tree = Node(best_attr, threshold)
+            tree = Node(best_attr, threshold, ig=ig)
 
             sub_1 = df[df[best_attr] >= threshold]
             sub_2 = df[df[best_attr] < threshold]
@@ -106,7 +110,7 @@ class DecisionTree():
                 best_attr = attribute
                 threshold = thres
         
-        return best_attr, threshold
+        return best_attr, threshold, max_info_gain
 
     def _select_threshold(self, df, attribute):
         """
@@ -184,21 +188,22 @@ class DecisionTree():
 
     def _create_view(self, root, level):
         if root.leaf:
-            elem = {
+            elem = OrderedDict({
                 "Label": root.predict,
-                "Thres": root.thres,
-                "Level": level,
                 "Instances": root.leaf_nums,
-            }
+                "Level": level,
+            })
             self.repr_tree.append(elem)
         
         else:
-            elem = {
-                "Attribute": root.attr,
-                "Thres": root.thres,
-                "Split": [root.left_nums, root.right_nums],
+            elem = OrderedDict({
                 "Level": level,
-            }
+                "Predecessor": root.left_nums + root.right_nums,
+                # "Gain": root.ig,
+                "Headline": str(root.attr) + " >= " + str(root.thres) + ";  Gain = "+str(root.ig),
+                # [root.attr, root.thres],
+                "Split": [root.left_nums, root.right_nums],
+            })
             self.repr_tree.append(elem)
         if root.left:
             self._create_view(root.left, level+1)
@@ -210,29 +215,72 @@ class DecisionTree():
         max_level = tree[-1]['Level']
         level = 0
         i = 0
+        node_i = 0
         print("\n","*"*30,"\n")
         print("Level ", level,"\n")
         while level <= max_level and i < len(tree):
             if tree[i]['Level'] > level:
+                if 'Headline' in tree[i]:
+                    node_i += 1
                 print("\n","*"*30,"\n")
                 level += 1
                 print("Level ", level, "\n")
 
-                pprint(tree[i])
+                pprint(dict(tree[i]))
 
             else:
-                pprint(tree[i])
+                if 'Headline' in tree[i]:
+                    node_i += 1
+                pprint(dict(tree[i]))
         
             i += 1
 
+        print("Total Nodes: ", node_i)
+
+
 
     def __call__(self):
-        root = self._build_tree(df=self.df)
-        self._create_view(root, 0)
+        self.final_tree = self._build_tree(df=self.df)
+        self._create_view(self.final_tree, 0)
 
         repr_tree = sorted(self.repr_tree, key=lambda k:k['Level'])
         self._represent_tree(repr_tree)
-        
+
+    
+    def _single_predict(self, node, row_df):
+        """
+        Predict for a single row from a dataframe.
+        Uses the trained tree 
+        """
+        # If we are at a leaf node, return the prediction of the leaf node
+        if node.leaf:
+            return node.predict
+        # Traverse left or right subtree based on instance's data
+        if row_df[node.attr] >= node.thres:
+            return self._single_predict(node.left, row_df)
+        elif row_df[node.attr] < node.thres:
+            return self._single_predict(node.right, row_df)
+
+    # Given a set of data, make a prediction for each instance using the Decision Tree
+    def _test_predictions(self):
+
+        root = self.final_tree
+        num_data = self.test_df.shape[0]
+        num_correct = 0
+        for index,row in self.test_df.iterrows():
+            prediction = self._single_predict(root, row)
+            if prediction == row['Outcome']:
+                num_correct += 1
+        metrics = {
+            "Accuracy": round(num_correct/num_data, 2),
+            "Error": 1 - round(num_correct/num_data, 2),
+        }
+        return metrics
+
+    def predict(self, test_data):
+        self.test_df  = test_data
+        metrics = self._test_predictions()
+        pprint(metrics)
 
 
             
