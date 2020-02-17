@@ -1,0 +1,209 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{paralist}
+\usepackage{epstopdf}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyvrb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{float}
+\usepackage{paralist}
+\usepackage[svgname]{xcolor}
+\usepackage{enumerate}
+\usepackage{array}
+\usepackage{times}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{environ}
+\usepackage{times}
+\usepackage{textcomp}
+\usepackage{caption}
+
+
+\urlstyle{rm}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[]
+\newtheorem{conjecture}{Conjecture}[]
+\newtheorem{example}{Example}[]
+\newtheorem{theorem}{Theorem}[]
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\br}[1]{\{#1\}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+
+\newcommand{\vc}[1]{\boldsymbol{#1}}
+\newcommand{\xv}{\vc{x}}
+\newcommand{\Sigmav}{\vc{\Sigma}}
+\newcommand{\alphav}{\vc{\alpha}}
+\newcommand{\muv}{\vc{\mu}}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\def\x{\mathbf x}
+\def\y{\mathbf y}
+\def\w{\mathbf w}
+\def\v{\mathbf v}
+\def\E{\mathbb E}
+\def\V{\mathbb V}
+
+% TO SHOW SOLUTIONS, include following (else comment out):
+\newenvironment{soln}{
+    \leavevmode\color{blue}\ignorespaces
+}{}
+
+
+\hypersetup{
+%    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\geometry{
+  top=1in,            % <-- you want to adjust this
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=3em,       % <-- and this
+  headsep=2em,          % <-- and this
+  footskip=3em,
+}
+
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{Homework 3}}
+\rhead{\fancyplain{}{CS 760 Machine Learning}}
+\cfoot{\thepage}
+
+\title{\textsc{Homework 3}} % Title
+
+%%% NOTE:  Replace 'NAME HERE' etc., and delete any "\red{}" wrappers (so it won't show up as red)
+
+\author{
+\red{$>>$NAME HERE$<<$} \\
+\red{$>>$ID HERE$<<$}\\
+} 
+
+\date{}
+
+\begin{document}
+
+\maketitle 
+
+
+\textbf{Instructions:} 
+Although this is a programming homework, you only need to hand in a pdf answer file.
+There is no need to submit the latex source or any code.
+You can choose any programming language, as long as you implement the algorithm from scratch. 
+
+Use this latex file as a template to develop your homework.
+Submit your homework on time as a single pdf file to Canvas.
+Please check Piazza for updates about the homework.
+
+\section{A Simplified 1NN Classifier}
+You are to implement a 1-nearest-neighbor learner for classification.
+To simplify your work, your program can assume that
+\begin{itemize}
+\item each item has $d$ continuous features $\x \in \RR^d$
+\item binary classification and the class label is encoded as $y \in \{0,1\}$
+\item data files are in plaintext with one labeled item per line, separated by whitespace:
+$$x_{11} \quad \ldots \quad x_{1d} \quad y_1$$
+$$...$$
+$$x_{n1} \quad \ldots \quad x_{nd} \quad y_n$$
+\end{itemize}
+
+Your program should implement a 1NN classifier: 
+\begin{itemize}
+\item Use Mahalanobis distance $d_A$ parametrized by a positive semidefinite (PSD) diagonal matrix $A$.  For $\x, \x' \in \RR^d$,
+$$d_A(\x,\x') = \|\x-\x'\|_A = \sqrt{(\x-x')^\top A (\x-x')}.$$
+We will specify $A$ in the questions below. (Hint: $d$ is dimension while $d_A$ with a subscript is distance)
+\item If multiple training points are the equidistant nearest neighbors of a test point, you may use any one of those training points to predict the label.
+\item You do not have to implement kd-tree.
+\end{itemize}
+
+\section{Questions}
+\begin{enumerate}
+
+\item (5 pts) What is the mathematical condition on the diagonal elements for a diagonal matrix $A$ to be PSD?
+
+\item (5 pts) Given a training data set $D$, how do we preprocess it to make each feature dimension mean 0 and variance 1? (Hint: give the formula for $\hat \mu_j, \hat \sigma_j$ for each dimension $j$, and explain how to use them to normalize the data.  You may use either the $1 \over n$ or $1 \over n-1$ version of sample variance.  You may assume the sample variances are non-zero.) 
+
+\item (5 pts) Let $\tilde \x$ be the preprocessed data. Give the formula for the Euclidean distance between $\tilde \x, \tilde \x'$.
+
+\item (5 pts) Give the equivalent Mahalanobis distance on the original data $\x, \x'$ by specifying $A$. (Hint: you may need $\hat \mu_j, \hat \sigma_j$)
+
+\item (5 pts) Let the diagonal elements of $A$ be $a_{11}, \ldots, a_{dd}$.
+Define a diagonal matrix $L$ with diagonal $\sqrt{a_{11}}, \ldots, \sqrt{a_{dd}}$.
+Define $\tilde \x = L\x$.
+Prove that $d_I(\tilde \x, \tilde \x') = d_A(\x, \x')$ where $I$ is the identity matrix.
+
+\item (5 pts) Geometrically, what does $L\x$ do to the point $\x$?  Explain in simple English.
+
+\item (10 pts) Let $U$ be any orthogonal matrix.
+Define $\tilde \x = UL\x$.
+(i) Prove that $d_I(\tilde \x, \tilde \x') = d_A(\x, \x')$ again. 
+(ii) Geometrically, what does $UL\x$ do to the point $\x$?  Explain in simple English.
+
+
+\item (20 pts) Use the whole D2z.txt as training set.  Use Euclidean distance (i.e. $A=I$).
+Visualize the predictions of 1NN on a 2D grid $[-2:0.1:2]^2$.
+That is, you should produce test points whose first feature goes over $-2, -1.9, -1.8, \ldots, 1.9, 2$, so does the second feature independent of the first feature.
+You should overlay the training set in the plot, just make sure we can tell which points are training, which are grid.
+
+\item (To normalize, or not to normalize?)
+Start from D2a.txt.  Perform 5-fold cross validation.
+  \begin{enumerate}
+  \item (5 pts) Do not normalize the data.  Report 1NN cross validation error rate for each fold, then the average (that's 6 numbers). 
+  \item (5 pts) Normalize the data.  Report 1NN cross validation error rate (again 6 numbers).  (Hints: Do not normalize the labels!  The relevant quantities should be estimated from the training portion, but applied to both training and validation portions.  This should happen 5 times.  Also, you would either change $\x$ into $\tilde \x = L\x$ but then use Euclidean distance on $\tilde \x$, or do not change $\x$ but use an appropriate $A$; don't mix the two.)
+  \item (5 pts) Look at D2a.txt, explain the effect of normalization on CV error.  Hint: the first 4 features are different than the next 2 features.
+  \end{enumerate}
+
+\item (Again.  10 pts)
+Repeat the above question, starting from D2b.txt.
+
+\item (5 pts) What do you learn from Q9 and Q10?
+
+\item (Weka, 10 pts)
+Repeat Q9 and Q10 with Weka.
+Convert appropriate data files into ARFF format.
+Choose classifiers / lazy / IBk.
+Set $K=1$.
+Choose 5-fold cross validation.
+Let us know what else you needed to set.  Compare Weka's results to your Q9 and Q10.
+
+
+\end{enumerate}
+
+\bibliographystyle{apalike}
+\end{document}
