@@ -281,24 +281,3 @@ class DecisionTree():
         self.test_df  = test_data
         metrics = self._test_predictions()
         pprint(metrics)
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-

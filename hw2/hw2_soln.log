@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.22)  7 FEB 2020 22:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.1.22)  15 FEB 2020 18:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -676,15 +676,85 @@ Package caption Info: longtable package is loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
 ))
-\c@definition=\count141
-\c@conjecture=\count142
-\c@example=\count143
-\c@theorem=\count144
-\c@lemma=\count145
-\c@proposition=\count146
-\c@corollary=\count147
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count141
+\lst@gtempboxa=\box64
+\lst@token=\toks35
+\lst@length=\count142
+\lst@currlwidth=\dimen151
+\lst@column=\count143
+\lst@pos=\count144
+\lst@lostspace=\dimen152
+\lst@width=\dimen153
+\lst@newlines=\count145
+\lst@lineno=\count146
+\lst@maxwidth=\dimen154
 
-(./hw2_soln.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count147
+\lst@skipnumbers=\count148
+\lst@framebox=\box65
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+\c@definition=\count149
+\c@conjecture=\count150
+\c@example=\count151
+\c@theorem=\count152
+\c@lemma=\count153
+\c@proposition=\count154
+\c@corollary=\count155
+
+(./hw2_soln.aux
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+)
 \openout1 = `hw2_soln.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
@@ -750,19 +820,19 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count148
-\scratchdimen=\dimen151
-\scratchbox=\box64
-\nofMPsegments=\count149
-\nofMParguments=\count150
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count151
-\MPscratchDim=\dimen152
-\MPnumerator=\count152
-\makeMPintoPDFobject=\count153
-\everyMPtoPDFconversion=\toks36
+\scratchcounter=\count156
+\scratchdimen=\dimen155
+\scratchbox=\box66
+\nofMPsegments=\count157
+\nofMParguments=\count158
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count159
+\MPscratchDim=\dimen156
+\MPnumerator=\count160
+\makeMPintoPDFobject=\count161
+\everyMPtoPDFconversion=\toks37
 )
-\AtBeginShipoutBox=\box65
+\AtBeginShipoutBox=\box67
 Package hyperref Info: Link coloring OFF on input line 120.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -770,7 +840,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count154
+\c@section@level=\count162
 )
 LaTeX Info: Redefining \ref on input line 120.
 LaTeX Info: Redefining \pageref on input line 120.
@@ -781,7 +851,9 @@ LaTeX Info: Redefining \nameref on input line 120.
 \openout5 = `hw2_soln.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count163
 LaTeX Font Info:    Try loading font information for U+msa on input line 123.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -804,49 +876,314 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 210.
+<q2.png, id=32, 483.8075pt x 300.12125pt>
+File: q2.png Graphic file (type png)
+<use q2.png>
+Package pdftex.def Info: q2.png  used on input line 231.
+(pdftex.def)             Requested size: 317.07614pt x 196.70221pt.
+ [2 <./q2.png>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 263.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 247.
+)
+<Druns_tree.png, id=42, 882.29625pt x 612.2875pt>
+File: Druns_tree.png Graphic file (type png)
+<use Druns_tree.png>
+Package pdftex.def Info: Druns_tree.png  used on input line 292.
+(pdftex.def)             Requested size: 317.07614pt x 220.04028pt.
  [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 247.
+<D3leaves_tree.png, id=50, 812.03375pt x 327.2225pt>
+File: D3leaves_tree.png Graphic file (type png)
+<use D3leaves_tree.png>
+Package pdftex.def Info: D3leaves_tree.png  used on input line 309.
+(pdftex.def)             Requested size: 317.07614pt x 127.77104pt.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 319.
 
-(./hw2_soln.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 247.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 247.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 319.
+ [4 <./Druns_tree.png> <./D3leaves_tree.png>]
+<D1_tree.png, id=71, 664.4825pt x 212.795pt>
+File: D1_tree.png Graphic file (type png)
+<use D1_tree.png>
+Package pdftex.def Info: D1_tree.png  used on input line 345.
+(pdftex.def)             Requested size: 317.07614pt x 101.53973pt.
+<D2_tree.png, id=72, 1761.58125pt x 881.2925pt>
+File: D2_tree.png Graphic file (type png)
+<use D2_tree.png>
+Package pdftex.def Info: D2_tree.png  used on input line 368.
+(pdftex.def)             Requested size: 498.26744pt x 249.27489pt.
+
+Overfull \hbox (45.29955pt too wide) in paragraph at lines 368--370
+ [][] 
+ []
+
+[5 <./D1_tree.png> <./D2_tree.png>]
+<D1_scatter.png, id=82, 1174.3875pt x 1156.32pt>
+File: D1_scatter.png Graphic file (type png)
+<use D1_scatter.png>
+Package pdftex.def Info: D1_scatter.png  used on input line 391.
+(pdftex.def)             Requested size: 498.26744pt x 490.59142pt.
+
+Overfull \hbox (45.29955pt too wide) in paragraph at lines 391--393
+ [][] 
+ []
+
+<D2_scatter.png, id=83, 1174.3875pt x 1156.32pt>
+File: D2_scatter.png Graphic file (type png)
+<use D2_scatter.png>
+Package pdftex.def Info: D2_scatter.png  used on input line 401.
+(pdftex.def)             Requested size: 498.26744pt x 490.59142pt.
+
+Overfull \hbox (45.29955pt too wide) in paragraph at lines 401--403
+ [][] 
+ []
+
+[6 <./D1_scatter.png>]
+<D1_DecisionBoundary.png, id=91, 1174.3875pt x 1189.44376pt>
+File: D1_DecisionBoundary.png Graphic file (type png)
+<use D1_DecisionBoundary.png>
+Package pdftex.def Info: D1_DecisionBoundary.png  used on input line 416.
+(pdftex.def)             Requested size: 498.26744pt x 504.64482pt.
+
+Overfull \hbox (45.29955pt too wide) in paragraph at lines 416--418
+ [][] 
+ []
+
+[7 <./D2_scatter.png>]
+<D2_DecisionBoundary.png, id=99, 1174.3875pt x 1189.44376pt>
+File: D2_DecisionBoundary.png Graphic file (type png)
+<use D2_DecisionBoundary.png>
+Package pdftex.def Info: D2_DecisionBoundary.png  used on input line 426.
+(pdftex.def)             Requested size: 498.26744pt x 504.64482pt.
+
+Overfull \hbox (45.29955pt too wide) in paragraph at lines 426--428
+ [][] 
+ []
+
+[8 <./D1_DecisionBoundary.png>] [9 <./D2_DecisionBoundary.png>]
+<err_n.png, id=113, 626.03888pt x 658.56038pt>
+File: err_n.png Graphic file (type png)
+<use err_n.png>
+Package pdftex.def Info: err_n.png  used on input line 473.
+(pdftex.def)             Requested size: 362.37569pt x 381.20157pt.
+ [10 <./err_n.png>]
+<n_32.png, id=120, 622.325pt x 611.28375pt>
+File: n_32.png Graphic file (type png)
+<use n_32.png>
+Package pdftex.def Info: n_32.png  used on input line 490.
+(pdftex.def)             Requested size: 271.7835pt x 266.96028pt.
+<n_128.png, id=121, 622.325pt x 611.28375pt>
+File: n_128.png Graphic file (type png)
+<use n_128.png>
+Package pdftex.def Info: n_128.png  used on input line 500.
+(pdftex.def)             Requested size: 271.7835pt x 266.96028pt.
+<n_512.png, id=122, 622.325pt x 611.28375pt>
+File: n_512.png Graphic file (type png)
+<use n_512.png>
+Package pdftex.def Info: n_512.png  used on input line 510.
+(pdftex.def)             Requested size: 271.7835pt x 266.96028pt.
+ [11 <./n_32.png> <./n_128.png>]
+<n_2048.png, id=131, 622.325pt x 611.28375pt>
+File: n_2048.png Graphic file (type png)
+<use n_2048.png>
+Package pdftex.def Info: n_2048.png  used on input line 520.
+(pdftex.def)             Requested size: 271.7835pt x 266.96028pt.
+<n_8192.png, id=132, 622.325pt x 611.28375pt>
+File: n_8192.png Graphic file (type png)
+<use n_8192.png>
+Package pdftex.def Info: n_8192.png  used on input line 531.
+(pdftex.def)             Requested size: 271.7835pt x 266.96028pt.
+ [12 <./n_512.png> <./n_2048.png>]
+<err_n_weka.png, id=142, 626.03888pt x 658.56038pt>
+File: err_n_weka.png Graphic file (type png)
+<use err_n_weka.png>
+Package pdftex.def Info: err_n_weka.png  used on input line 575.
+(pdftex.def)             Requested size: 362.37569pt x 381.20157pt.
+ [13 <./n_8192.png>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 593.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 593.
+ [14 <./err_n_weka.png>] [15] [16]
+Overfull \hbox (21.03693pt too wide) in paragraph at lines 804--805
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (3.03674pt too wide) in paragraph at lines 815--816
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (45.03717pt too wide) in paragraph at lines 817--818
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+[17]
+Overfull \hbox (15.03687pt too wide) in paragraph at lines 818--819
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.03687pt too wide) in paragraph at lines 847--848
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.0368pt too wide) in paragraph at lines 848--849
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.03687pt too wide) in paragraph at lines 860--861
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.0368pt too wide) in paragraph at lines 861--862
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (21.03693pt too wide) in paragraph at lines 874--875
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+[18]
+Overfull \hbox (45.03717pt too wide) in paragraph at lines 876--877
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (75.03748pt too wide) in paragraph at lines 878--879
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (87.0376pt too wide) in paragraph at lines 880--881
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (81.03754pt too wide) in paragraph at lines 881--882
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (93.03766pt too wide) in paragraph at lines 885--886
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (69.03741pt too wide) in paragraph at lines 886--887
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (33.03705pt too wide) in paragraph at lines 887--888
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.0368pt too wide) in paragraph at lines 888--889
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.03687pt too wide) in paragraph at lines 892--893
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.0368pt too wide) in paragraph at lines 893--894
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (27.03699pt too wide) in paragraph at lines 896--897
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (21.03693pt too wide) in paragraph at lines 901--902
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (39.03711pt too wide) in paragraph at lines 902--903
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 928.
+[19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 928.
+ (./hw2_soln.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 928.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 928.
 Package rerunfilecheck Info: File `hw2_soln.out' has not changed.
 (rerunfilecheck)             Checksum: 74C8C142727C22670392BC7A0E1B16DF;153.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 247.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 928.
  ) 
 Here is how much of TeX's memory you used:
- 10289 strings out of 494477
- 149938 string characters out of 6175715
- 258548 words of memory out of 5000000
- 13756 multiletter control sequences out of 15000+600000
+ 12291 strings out of 494477
+ 177048 string characters out of 6175715
+ 439103 words of memory out of 5000000
+ 15407 multiletter control sequences out of 15000+600000
  27354 words of font info for 67 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 42i,11n,43p,708b,496s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,43p,908b,1781s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmr8a.pfb>
-Output written on hw2_soln.pdf (3 pages, 136347 bytes).
+ublic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmr8a.pfb>
+Output written on hw2_soln.pdf (19 pages, 934134 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 25 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 570 PDF objects out of 1000 (max. 8388607)
+ 499 compressed objects within 5 object streams
+ 331 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 
